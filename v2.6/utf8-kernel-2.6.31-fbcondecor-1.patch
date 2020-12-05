@@ -1,0 +1,68 @@
+# 作者（author）: 孙海勇
+# 发布协议（License）: GPL v2
+# 邮件（email）: youbest@sina.com
+# 说明：此补丁用于Linux内核，实现直接在framebuffer环境下直接显示UTF-8编码的文字功能。此补丁为fbcondecor功能修正补丁，需要实现给内核打fbcondecor补丁。
+
+--- linux-2.6.31.orig/drivers/video/console/cfbcondecor.c	2009-09-25 19:52:10.000000000 +0800
++++ linux-2.6.31/drivers/video/console/cfbcondecor.c	2009-09-25 19:47:45.000000000 +0800
+@@ -24,6 +24,10 @@
+ 
+ #include "fbcon.h"
+ #include "fbcondecor.h"
++#include "fonts_utf8.h"
++
++extern int fbcon_is_softback(const unsigned short *str);
++extern u16 utf8_pos(struct vc_data *vc, const unsigned short *utf8);
+ 
+ #define parse_pixel(shift,bpp,type)						\
+ 	do {									\
+@@ -172,7 +176,12 @@ void fbcon_decor_putcs(struct vc_data *v
+ {
+ 	unsigned short charmask = vc->vc_hi_font_mask ? 0x1ff : 0xff;
+ 	struct fbcon_ops *ops = info->fbcon_par;
++	const void *olddata = vc->vc_font.data;
++	int oldwidth = vc->vc_font.width;
++	int oldheight = vc->vc_font.height;
+ 	int fg_color, bg_color, transparent;
++	int utf_8 = 0;
++	int utf8_c = 0;
+ 	u8 *src;
+ 	u32 bgx, fgx;
+ 	u16 c = scr_readw(s);
+@@ -191,13 +200,33 @@ void fbcon_decor_putcs(struct vc_data *v
+ 	bgx = cc2cx(bg_color);
+ 
+ 	while (count--) {
+-		c = scr_readw(s++);
+-		src = vc->vc_font.data + (c & charmask) * vc->vc_font.height *
+-		      ((vc->vc_font.width + 7) >> 3);
++		utf_8 = 0;
++		c = scr_readw(s);
++		utf8_c = utf8_pos(vc, s);
++		if (((c & charmask) == 0xff || (c & charmask) == 0xfe) && utf8_c != 0){
++			vc->vc_font.data = font_utf8;
++			vc->vc_font.width = 8;
++			vc->vc_font.height = 16;
++			if((c & charmask) == 0xff){
++				src = vc->vc_font.data + (utf8_c * 32);
++			}else{
++				src = vc->vc_font.data + (utf8_c * 32 + 16);
++			}
++			utf_8 = 1;
++		}else{
++			src = vc->vc_font.data + (c & charmask) * vc->vc_font.height *
++		     		((vc->vc_font.width + 7) >> 3);
++		}
+ 
+ 		fbcon_decor_renderc(info, yy, xx, vc->vc_font.height,
+ 			       vc->vc_font.width, src, fgx, bgx, transparent);
+ 		xx += vc->vc_font.width;
++		if (utf_8 == 1){
++			vc->vc_font.data = (void *)olddata;
++			vc->vc_font.width = oldwidth;
++			vc->vc_font.height = oldheight;
++		}
++		s++;
+ 	}
+ }
+ 
