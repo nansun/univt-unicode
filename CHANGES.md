@@ -1,6 +1,6 @@
 # CHANGES
 
-### 2020.12.31 / 5.11-rc1
+## 2020.12.31 / 5.11-rc1
 
 - Resync for linux-5.11.y
 - Update font data to GNU Unifont 13.0.05
