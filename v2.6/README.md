@@ -5,12 +5,17 @@ The Patches is extracted from <https://code.google.com/archive/p/archlive-pkg/so
 http://blog.chinaunix.net/uid/436750.html
 http://web.archive.org/web/20110120025134/http://blogold.chinaunix.net/u/13265/showart.php?id=1008020
 http://web.archive.org/web/20121123205133/http://blog.chinaunix.net/space.php?uid=436750
+http://m.blog.chinaunix.net/uid-436750-id-3568909.html
 
 # 作者（author）: 孙海勇
 # 发布协议（License）: GPL v2
 # 邮件（email）: youbest@sina.com
 
 更新:
+    2013年6月12日（端午节）:发布3.9.0第1版通用补丁
+    2013年6月12日（端午节）:发布3.8.0第1版通用补丁
+    2013年6月12日（端午节）:发布3.7.0第2版通用补丁
+    2013年2月10日（春节）:发布3.7.0第1版通用补丁
     2012年1月23日（春节）:univt发布3.2.1第２版通用补丁
     2012年1月23日（春节）:发布3.2.1第１版通用补丁
     2011年6月6日（端午节）:发布2.6.39通用补丁
