@@ -1,5 +1,5 @@
 
-The Patches is extracted from <https://code.google.com/archive/p/archlive-pkg/source/default/source?page=1>
+These patches were extracted from <https://code.google.com/archive/p/archlive-pkg/source/default/source?page=1>
 
 ```text
 http://blog.chinaunix.net/uid/436750.html
