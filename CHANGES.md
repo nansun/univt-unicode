@@ -1,6 +1,6 @@
 # CHANGES
 
-### 2021.09.17 / 5.14.5
+## 2021.09.17 / 5.14.5
 
 - Update font data to GNU Unifont 14.0.01
 
