@@ -1,5 +1,9 @@
 # CHANGES
 
+### 2021.09.17 / 5.14.5
+
+- Update font data to GNU Unifont 14.0.01
+
 ## 2021.02.22 / 5.11
 
 - Resync for linux-5.11.y
