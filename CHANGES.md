@@ -1,5 +1,11 @@
 # CHANGES
 
+## 2022.01.10 / 5.16
+
+- Resync for linux-5.16.y
+- Remove scroll acceleration code (upstream)
+  - [torvalds/linux@b3ec8cd](https://github.com/torvalds/linux/commit/b3ec8cdf457e5e63d396fe1346cc788cf7c1b578)
+
 ## 2021.09.17 / 5.14.5
 
 - Update font data to GNU Unifont 14.0.01
@@ -29,5 +35,5 @@
 
 - Base on [AOSC univt](https://github.com/AOSC-Dev/aosc-os-abbs)
 - Resync for linux-5.9.y
-- Remove soft scrollback code support (upstream)
+- Remove soft scrollback code (upstream)
   - [torvalds/linux@5014547](https://github.com/torvalds/linux/commit/50145474f6ef4a9c19205b173da6264a644c7489)
