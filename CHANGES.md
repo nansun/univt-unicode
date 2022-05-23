@@ -1,5 +1,10 @@
 # CHANGES
 
+## 2022.05.23 / 5.18
+
+- Resync for linux-5.18.y
+- Fix build warnings with GCC 12 (`-Wbidi-chars=unpaired`)
+
 ## 2022.03.21 / 5.17
 
 - Resync for linux-5.17.y
