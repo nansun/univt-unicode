@@ -43,9 +43,9 @@ I found cjktty, maintained by @microcai, who was inspired by youbest and contrib
 
 我找到了由@microcai 维护的cjktty，他受youbest（孙海勇）的启发，开发了这个补丁并贡献给了gentoo社区。Gentoo也是个很赞的发行版，在编译源代码的路上比archlinux走得更远。多年以前我也玩过，但实在等不了长时间的编译。
 
-Then I found @zhmars, who forked univt first and then cjktty. I saw my font file was kept and used in kernel version < 4.2. Then the relevant kernel code changed significantly, and the font size changed as well. I'd like to appreciate @zhmars for his update on the later versions of linux kernel, and I am grateful for his contribution to these Chinese console patches.
+Then I found @zhmars, who forked univt first and then cjktty. I saw my font file was kept by @detiam and used in kernel versions < 4.2. Then the relevant kernel code changed significantly, and the font size changed as well. I'd like to appreciate @zhmars and @detiam for their update on the later versions of linux kernel, and I am grateful for their contribution to these Chinese console patches.
 
-后来我又找到了@zhmars，他先fork了univt，又fork了cjktty。我看到自己当初做的字体文件被留了下来，用在了4.2版本之前的内核上。后来这部分内核代码改动很大，字体大小也改了。在此我要感谢@zhmars，他把这个补丁持续地更新到后来版本的Linux内核，也对这些中文控制台的补丁做出了独有的贡献。
+后来我又找到了@zhmars，他先fork了univt，又fork了cjktty。我看到自己当初做的字体文件被@detiam保留了下来，用在了4.2版本之前的内核上。后来这部分内核代码改动很大，字体大小也改了。在此我要感谢@zhmars和@detiam，他们把这个补丁持续地更新到后来版本的Linux内核，也对这些中文控制台的补丁做出了独有的贡献。
 
 I can see the latest kernel 5.18 can use 32 x 32 font size, back then it was 16 x 16 when I converted the unifont in 2012. And thanks a lot to @zhmars, who re-convert the latest version of unifont to 32 x 32 glyph and applied it to both univt and cjktty. The idea of extending the font support from cjk to unicode is kept and shared, by a bunch of Chinese people who love linux, console and Chinese.
 
