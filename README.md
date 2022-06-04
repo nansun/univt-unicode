@@ -57,7 +57,7 @@ So I forked his univt patch repository and added this story to README. I'm so pr
 
 - Neil Sun, June 5 2022, in Shanghai, China
 
-- 孙楠，2002年6月5日，于中国上海
+- 孙楠，2022年6月5日，于中国上海
 
 ========================
 
